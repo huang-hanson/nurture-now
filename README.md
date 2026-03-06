@@ -1,6 +1,6 @@
-# 健身健身小程序 - uni-app + Spring Boot
+# 养时小程序 - uni-app + Spring Boot
 
-基于 uni-app (Vue 3) + Spring Boot 2.4.2 + MyBatis Plus 的健康健身管理系统
+基于 uni-app (Vue 3) + Spring Boot 2.4.2 + MyBatis Plus 的养时小程序(养生的时刻)
 
 ## 技术栈
 
