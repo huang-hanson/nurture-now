@@ -1,0 +1,19 @@
+{
+  "name": "health-fitness-frontend",
+  "version": "1.0.0",
+  "description": "健康健身小程序前端 - uni-app (Vue 3)",
+  "scripts": {
+    "dev:h5": "echo '请使用 HBuilderX 运行项目' && echo '1. 下载 HBuilderX: https://www.dcloud.io/hbuilderx.html' && echo '2. 打开 HBuilderX' && echo '3. 文件 -> 导入 -> 从本地目录导入' && echo '4. 选择 frontend 目录' && echo '5. 点击工具栏的\"运行\" -> \"运行到浏览器\"'",
+    "build:h5": "echo '请使用 HBuilderX 构建项目' && echo '1. 点击工具栏的\"发行\" -> \"网站-H5手机版\"'",
+    "dev:mp-weixin": "echo '请使用 HBuilderX 运行到微信小程序'",
+    "build:mp-weixin": "echo '请使用 HBuilderX 发行到微信小程序'"
+  },
+  "dependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@dcloudio/uni-cli-shared": "^3.0.0",
+    "@dcloudio/vite-plugin-uni": "^3.0.0",
+    "vite": "^4.0.0"
+  }
+}

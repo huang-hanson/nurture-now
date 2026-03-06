@@ -1,0 +1,102 @@
+{
+    "pages": [
+        {
+            "path": "pages/index/index",
+            "style": {
+                "navigationBarTitleText": "首页",
+                "navigationBarBackgroundColor": "#10B981",
+                "navigationBarTextStyle": "white"
+            }
+        },
+        {
+            "path": "pages/checkin/index",
+            "style": {
+                "navigationBarTitleText": "签到打卡",
+                "navigationBarBackgroundColor": "#10B981",
+                "navigationBarTextStyle": "white"
+            }
+        },
+        {
+            "path": "pages/food/index",
+            "style": {
+                "navigationBarTitleText": "食物库",
+                "navigationBarBackgroundColor": "#10B981",
+                "navigationBarTextStyle": "white"
+            }
+        },
+        {
+            "path": "pages/exercise/index",
+            "style": {
+                "navigationBarTitleText": "运动库",
+                "navigationBarBackgroundColor": "#10B981",
+                "navigationBarTextStyle": "white"
+            }
+        },
+        {
+            "path": "pages/plan/index",
+            "style": {
+                "navigationBarTitleText": "训练计划",
+                "navigationBarBackgroundColor": "#10B981",
+                "navigationBarTextStyle": "white"
+            }
+        },
+        {
+            "path": "pages/mine/index",
+            "style": {
+                "navigationBarTitleText": "我的",
+                "navigationBarBackgroundColor": "#10B981",
+                "navigationBarTextStyle": "white"
+            }
+        }
+    ],
+    "globalStyle": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#10B981",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "static/tabbar/home.png",
+                "selectedIconPath": "static/tabbar/home-active.png"
+            },
+            {
+                "pagePath": "pages/checkin/index",
+                "text": "签到",
+                "iconPath": "static/tabbar/checkin.png",
+                "selectedIconPath": "static/tabbar/checkin-active.png"
+            },
+            {
+                "pagePath": "pages/food/index",
+                "text": "食物库",
+                "iconPath": "static/tabbar/food.png",
+                "selectedIconPath": "static/tabbar/food-active.png"
+            },
+            {
+                "pagePath": "pages/exercise/index",
+                "text": "运动库",
+                "iconPath": "static/tabbar/exercise.png",
+                "selectedIconPath": "static/tabbar/exercise-active.png"
+            },
+            {
+                "pagePath": "pages/plan/index",
+                "text": "计划",
+                "iconPath": "static/tabbar/plan.png",
+                "selectedIconPath": "static/tabbar/plan-active.png"
+            },
+            {
+                "pagePath": "pages/mine/index",
+                "text": "我的",
+                "iconPath": "static/tabbar/mine.png",
+                "selectedIconPath": "static/tabbar/mine-active.png"
+            }
+        ]
+    }
+}

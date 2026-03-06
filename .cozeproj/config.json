@@ -1,0 +1,44 @@
+{
+  "projectName": "health-fitness",
+  "projectType": "fullstack",
+  "framework": "uni-app + Spring Boot",
+  "version": "1.0.0",
+  "description": "健康健身小程序 - uni-app (Vue 3) + Spring Boot 2.4.2 + MyBatis Plus",
+  "scripts": {
+    "dev": "bash .cozeproj/scripts/dev_run.sh",
+    "stop": "bash .cozeproj/scripts/stop.sh",
+    "start": "bash .cozeproj/scripts/dev_run.sh"
+  },
+  "services": [
+    {
+      "name": "backend",
+      "type": "spring-boot",
+      "port": 8080,
+      "path": "backend",
+      "command": "mvn spring-boot:run"
+    },
+    {
+      "name": "frontend",
+      "type": "uni-app",
+      "port": 5173,
+      "path": "frontend",
+      "command": "npm run dev:h5"
+    }
+  ],
+  "dependencies": {
+    "backend": {
+      "java": ">= 1.8",
+      "maven": ">= 3.6",
+      "mysql": ">= 8.0"
+    },
+    "frontend": {
+      "node": ">= 14",
+      "npm": ">= 6"
+    }
+  },
+  "documentation": {
+    "readme": "README.md",
+    "deployment": "DEPLOYMENT.md",
+    "ui-preview": "UI_PREVIEW.md"
+  }
+}
