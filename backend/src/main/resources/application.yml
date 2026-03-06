@@ -7,8 +7,8 @@ spring:
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/health_fitness?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/health_fitness?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: 123456
 
@@ -37,6 +37,6 @@ mybatis-plus:
 
 # LLM API 配置
 llm:
-  api-url: https://api.coze.cn/open_api/v2/chat
-  api-key: ${COZE_API_KEY:your-api-key}
+  api-url: https://api.deepseek.com
+  api-key: sk-5d5f2a71985e44a781024c7a286b781c
   model: deepseek-chat

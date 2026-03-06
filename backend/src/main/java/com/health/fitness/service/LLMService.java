@@ -8,9 +8,7 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Service
@@ -71,20 +69,26 @@ public class LLMService {
     }
 
     private String callLLM(String prompt) {
+        // DeepSeek/OpenAI API 格式
         JSONObject requestBody = new JSONObject();
-        requestBody.put("bot_id", "");
-        requestBody.put("user", "user");
-        requestBody.put("query", prompt);
-        requestBody.put("stream", false);
+        requestBody.put("model", model);
+
+        JSONArray messages = new JSONArray();
+        JSONObject userMessage = new JSONObject();
+        userMessage.put("role", "user");
+        userMessage.put("content", prompt);
+        messages.add(userMessage);
+        requestBody.put("messages", messages);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("Authorization", "Bearer " + apiKey);
 
+        String endpoint = apiUrl + "/v1/chat/completions";
         HttpEntity<String> entity = new HttpEntity<>(requestBody.toJSONString(), headers);
 
         ResponseEntity<String> response = restTemplate.exchange(
-            apiUrl,
+            endpoint,
             HttpMethod.POST,
             entity,
             String.class
@@ -92,14 +96,17 @@ public class LLMService {
 
         if (response.getStatusCode() == HttpStatus.OK) {
             JSONObject jsonResponse = JSON.parseObject(response.getBody());
-            JSONArray messages = jsonResponse.getJSONArray("messages");
-            if (messages != null && messages.size() > 0) {
-                JSONObject lastMessage = messages.getJSONObject(messages.size() - 1);
-                return lastMessage.getString("content");
+            JSONArray choices = jsonResponse.getJSONArray("choices");
+            if (choices != null && choices.size() > 0) {
+                JSONObject firstChoice = choices.getJSONObject(0);
+                JSONObject message = firstChoice.getJSONObject("message");
+                if (message != null) {
+                    return message.getString("content");
+                }
             }
         }
 
-        throw new RuntimeException("AI服务返回异常");
+        throw new RuntimeException("AI服务返回异常: " + response.getBody());
     }
 
     private Integer parseCalories(String response) {

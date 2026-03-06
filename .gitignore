@@ -10,3 +10,10 @@ target/
 # OS
 .DS_Store
 Thumbs.db
+
+# claude
+/.claude/
+/.cozeproj/
+
+# vs
+/.vscode/
